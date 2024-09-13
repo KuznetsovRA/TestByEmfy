@@ -1,0 +1,26 @@
+const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImU3YWJmZjE5OTBlOTNlYjkzZWExYjU2OTljZDZlMDI3ZjJjNTMzYTFjMmVlNTk1N2ZkNWJhOGY1NWFhZjA3MTcyZWFhZjg3ZjVjYzM3ZDM2In0.eyJhdWQiOiJlN2RlOTEzNS1jZjllLTQ2ZTEtYWE0Yi03Y2M5NDZmYzA1YzQiLCJqdGkiOiJlN2FiZmYxOTkwZTkzZWI5M2VhMWI1Njk5Y2Q2ZTAyN2YyYzUzM2ExYzJlZTU5NTdmZDViYThmNTVhYWYwNzE3MmVhYWY4N2Y1Y2MzN2QzNiIsImlhdCI6MTcyNjI0NTAzOCwibmJmIjoxNzI2MjQ1MDM4LCJleHAiOjE3MzgyODE2MDAsInN1YiI6IjExNTAzNzI2IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMxOTQ0MzIyLCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiMGRjYjY1NDQtNjgxZi00ZDg4LTljNGUtYzk5ZmE5NjgxYTg3IiwiYXBpX2RvbWFpbiI6ImFwaS1iLmFtb2NybS5ydSJ9.Lggl4ylSjSMhChZpfXdrbTgcUNxeDqIxZ1Ww-i0aXJdqWoW1D72t4OPUZ2Cz3wOxItxXtUNuhqk5sMkPVgEi_X9Uk7c0mN3Rw7EFQeznMKYleIB2aLjVOVqFX9rGbvH3_Z3HsI2fwMgBM2OaIKysFvFyaektLUOaGYlMHB8ysfyUxxalJAoDTzFvL5WoOnsFLSR4l97RNjCx_YcA_i-9otWwCCXofHsSfjjgqYpLPPA9jsPfbLAHmRtMxbOfF2Mf1EwdvkdLErKK-aEf1SSf5SNMz7SolxAa3ZZ-_WpiCK2vDyEcOAlrCrUfpgynovl5Rx8SzYH_iCCHjnkyS-du9w'; // Полученный токен после аутентификации
+const amocrmDomain = 'https://kusnetsovra.amocrm.ru'; // Ваш домен на amoCRM
+
+
+// Функция для получения данных о сделках
+export async function getDeals() {
+  const url = `https://kusnetsovra.amocrm.ru/api/v4/leads`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Authorization': `BBearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImU3YWJmZjE5OTBlOTNlYjkzZWExYjU2OTljZDZlMDI3ZjJjNTMzYTFjMmVlNTk1N2ZkNWJhOGY1NWFhZjA3MTcyZWFhZjg3ZjVjYzM3ZDM2In0.eyJhdWQiOiJlN2RlOTEzNS1jZjllLTQ2ZTEtYWE0Yi03Y2M5NDZmYzA1YzQiLCJqdGkiOiJlN2FiZmYxOTkwZTkzZWI5M2VhMWI1Njk5Y2Q2ZTAyN2YyYzUzM2ExYzJlZTU5NTdmZDViYThmNTVhYWYwNzE3MmVhYWY4N2Y1Y2MzN2QzNiIsImlhdCI6MTcyNjI0NTAzOCwibmJmIjoxNzI2MjQ1MDM4LCJleHAiOjE3MzgyODE2MDAsInN1YiI6IjExNTAzNzI2IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMxOTQ0MzIyLCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiMGRjYjY1NDQtNjgxZi00ZDg4LTljNGUtYzk5ZmE5NjgxYTg3IiwiYXBpX2RvbWFpbiI6ImFwaS1iLmFtb2NybS5ydSJ9.Lggl4ylSjSMhChZpfXdrbTgcUNxeDqIxZ1Ww-i0aXJdqWoW1D72t4OPUZ2Cz3wOxItxXtUNuhqk5sMkPVgEi_X9Uk7c0mN3Rw7EFQeznMKYleIB2aLjVOVqFX9rGbvH3_Z3HsI2fwMgBM2OaIKysFvFyaektLUOaGYlMHB8ysfyUxxalJAoDTzFvL5WoOnsFLSR4l97RNjCx_YcA_i-9otWwCCXofHsSfjjgqYpLPPA9jsPfbLAHmRtMxbOfF2Mf1EwdvkdLErKK-aEf1SSf5SNMz7SolxAa3ZZ-_WpiCK2vDyEcOAlrCrUfpgynovl5Rx8SzYH_iCCHjnkyS-du9w`, // Передаем токен в заголовке
+        'Content-Type': 'application/json'
+      }
+    });
+
+
+    // Выводим данные в консоль
+    const data = await response; // Парсим JSON-ответ
+    console.log('Данные о сделках:', data.status); // Выводим данные в консоль
+  } catch (e) {
+    console.log(e)
+  }
+}
+
