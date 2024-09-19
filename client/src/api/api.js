@@ -1,5 +1,5 @@
 export const getDeals = async () => {
-  const url = 'http://localhost:3001/api/deals';
+  const url = 'https://test-by-emfy.vercel.app/api/deals';
 
   try {
     const response = await fetch(url, {
