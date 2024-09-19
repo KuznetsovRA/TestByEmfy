@@ -4,7 +4,7 @@
   "main": "api/deals.js",
   "scripts": {
     "start": "node api/deals.js",
-    "build": "echo 'no build required'"
+    "build": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "node-fetch": "^2.6.1"
