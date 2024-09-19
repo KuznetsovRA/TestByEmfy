@@ -1,11 +1,13 @@
 import './App.css'
-import CardList from "./components/card-list/card-list..jsx";
-import {getDeals} from "./api/api.js";
+import CardList from "./components/card-list/card-list.jsx";
 
 function App() {
-  getDeals();
+
   return (
     <>
+      <div className="header">
+        <h1>Добро пожаловать!</h1>
+      </div>
       <CardList/>
     </>
   )

@@ -1,0 +1,10 @@
+.list__container {
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    width: 100%;
+    background: #726e6e;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+}

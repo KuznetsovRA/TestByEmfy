@@ -1,0 +1,18 @@
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3); /* Светлый полупрозрачный цвет для заднего слоя */
+    border-top: 4px solid #fff; /* Полностью белый цвет для верхнего слоя */
+    border-radius: 50%; /* Закругляем до круга */
+    animation: spin 1s linear infinite; /* Крутящаяся анимация */
+    margin: 0 auto; /* Центрируем спиннер внутри контейнера */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Начальная позиция */
+    }
+    100% {
+        transform: rotate(360deg); /* Поворот на 360 градусов */
+    }
+}
